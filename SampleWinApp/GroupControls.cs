@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 
 using System.Configuration;
 
+
 namespace SampleWinApp
 {
     public partial class GroupControls : Form
@@ -34,15 +35,15 @@ namespace SampleWinApp
             //listBox1.DisplayMember = "Name";
 
 
-            SqlConnection connection = new SqlConnection("Initial Catalog=Drsis1;Data Source=RAMS-PC\\SQLEXPRESS2008;Integrated Security=SSPI;");
-
-            connection.Open();
+            SqlConnection connection = new SqlConnection(ConfigurationSettings.AppSettings["ConnectionString"]);            
 
             SqlCommand cmd  = new SqlCommand("select * from admin", connection);
 
+            connection.Open();
+
             SqlDataReader dr = cmd.ExecuteReader();
 
-            int i = 0;
+            int i = 0;            
 
             while (dr.Read())
             {
