@@ -96,6 +96,19 @@ namespace SampleWinApp
         {
             var i = comboBox1.SelectedValue;
         }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            switch (e.Node.Name)
+            {
+                case "1":
+                    break;
+                case "2":
+                    break;
+                default:
+                    break;
+            }
+        }
        
     }
 }

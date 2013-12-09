@@ -48,6 +48,21 @@ namespace SampleWinApp
         private void cmbOrder_SelectedValueChanged(object sender, EventArgs e)
         {
 
+            Guid OrderId = (Guid)((DataRowView)cmbOrder.SelectedItem).Row["OrderId"];
+
+            SqlConnection connection = new SqlConnection(ConfigurationSettings.AppSettings["CommerceDbConnectionString"]);
+
+            SqlDataAdapter da = new SqlDataAdapter("select * from OrderItems OI LEFT JOIN Products P ON OI.ProductId = P.ProductId where  OrderId = '" + OrderId.ToString() + "'", connection);
+
+            DataSet ds = new DataSet();
+
+            da.Fill(ds, "OrderItems");
+
+
+            cmbOrderItems.DataSource = ds.Tables["OrderItems"];
+            cmbOrderItems.ValueMember = "ProductId";
+            cmbOrderItems.DisplayMember = "ProductName";
+               
         }
         
     }

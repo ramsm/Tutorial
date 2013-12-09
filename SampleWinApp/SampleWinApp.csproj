@@ -74,6 +74,12 @@
     <Compile Include="Drag-Drop.Designer.cs">
       <DependentUpon>Drag-Drop.cs</DependentUpon>
     </Compile>
+    <Compile Include="GridViewExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GridViewExample.Designer.cs">
+      <DependentUpon>GridViewExample.cs</DependentUpon>
+    </Compile>
     <Compile Include="GroupControls.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Drag-Drop.resx">
       <DependentUpon>Drag-Drop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridViewExample.resx">
+      <DependentUpon>GridViewExample.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GroupControls.resx">
       <DependentUpon>GroupControls.cs</DependentUpon>
